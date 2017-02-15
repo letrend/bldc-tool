@@ -160,6 +160,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->realtimePlotPosition->xAxis->setLabel("Sample");
     ui->realtimePlotPosition->yAxis->setLabel("Deg");
 
+    ui->firmwareEdit->setText("/home/letrend/workspace/bldc/build/BLDC_4_ChibiOS.bin");
+
     qApp->installEventFilter(this);
 }
 
@@ -2596,9 +2598,9 @@ void MainWindow::on_posCtrlButton_clicked()
 void MainWindow::on_firmwareChooseButton_clicked()
 {
     QMessageBox messageBox;
-    messageBox.warning(this, "Warning", "WARNING: Uploading firmware for the wrong hardware version "
-                                        "WILL damage the VESC for sure. Make sure that you choose the "
-                                        "correct hardware version.");
+//    messageBox.warning(this, "Warning", "WARNING: Uploading firmware for the wrong hardware version "
+//                                        "WILL damage the VESC for sure. Make sure that you choose the "
+//                                        "correct hardware version.");
 
     QString filename = QFileDialog::getOpenFileName(this,
                                                     tr("Choose Firmware File"), ".",
